@@ -1,0 +1,342 @@
+/* -------------------- HTML --------------------- */
+html {
+  background-color: black;
+  height: 100vh;
+}
+body {
+  text-align: center;
+  background-color: black;
+  font-family: 'PT Mono';
+  height: 100%;
+  width: 100%;
+}
+button.btn.btn-default:visited,
+button.btn.btn-default:active,
+button.btn.btn-default:focus,
+button.btn.boardSquare:visited,
+button.btn.boardSquare:active,
+button.btn.boardSquare:focus {
+  outline: none;
+  text-decoration: none;
+}
+button.btn.btn-success.btn-lg#playBtn:visited, button.btn.btn-info.btn-lg#aboutBtn:visited, button.btn.btn-success.btn-lg#playBtn:active, button.btn.btn-info.btn-lg#aboutBtn:active, button.btn.btn-success.btn-lg#playBtn:focus, button.btn.btn-info.btn-lg#aboutBtn:focus {
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+tr {
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+}
+td {
+  padding-bottom: 1vw;
+}
+
+/* ------------------ CLASSES -------------------- */
+.boardSquare {
+  background-color: black;
+  float: left;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  margin: none;
+  height: 13vw;
+  width: 13vw;
+  box-shadow: inset .5px .5px .5px 0px white;
+}
+.boardImg {
+  font-size: 11.5vw;
+}
+.visualPress {
+  background-color: white;
+}
+.disableBtns {
+  pointer-events: none;
+}
+.played {
+  pointer-events: none;
+}
+.hidden {
+  display: none;
+}
+.forRotate {
+  transition: transform 1.5s;
+}
+.forConstantSpin {
+  transition: transform 120s;
+}
+.constantSpin {
+  transform: rotate(4500deg);
+}
+.rotate {
+  transform: rotate(720deg);
+}
+.smallTxt {
+  font-size: 1vw;
+  font-weight: bold;
+}
+.wl {
+  height: 100%;
+}
+/* -------------------- ID'S --------------------- */
+#gameHeader {
+  font-size: 10vw;
+}
+#boardBckGrnd {
+  background-color: black;
+  height: 100%;
+  width:100%;
+}
+#gameBoard {
+  margin-top: 5vw;
+  background-color: black;
+  height: 39vw;
+  width: 39vw;
+  padding: 0%;
+  box-shadow: .5px .5px .5px 1px white;
+}
+#selectIcon,
+#stats,
+#winLose {
+  border: none;
+  color: white;
+  background-color: black;
+  margin-bottom: 1vw;
+}
+#selectIcon {
+  margin-top: 10vh;
+  font-size: 5vw;
+  height: 100%;
+}
+#selectBtns,
+.diff {
+  background-color: black;
+}
+#stats {
+  height: 50%;
+  margin-top: .5vw;
+  font-size: 2vw;
+}
+#winLose {
+  height: 100%;
+  width: 100%;
+  font-size: 4vw;
+  font-weight: bold;
+}
+#sorryCongrats {
+  font-style: italic;
+}
+#landingPage {
+  color: white;
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  border: none;
+}
+.btn.btn-lg#earth,
+.btn.btn-lg#sun,
+.diff,
+#new,
+#chngIcon,
+#quit,
+#chngDiff {
+  background-color: black;
+  padding: none;
+  height: 18vw;
+  width: 18vw;
+  border-color: white;
+  margin-top: 4vw;
+  color: white;
+}
+#new:hover,
+#chngIcon:hover,
+#quit:hover,
+.btn.btn-lg#earth:hover,
+.btn.btn-lg#sun:hover,
+#chngDiff:hover {
+  /*   color: black; */
+  background-color: white;
+  text-shadow: 1.5px 1.5px 1.5px black;
+}
+#playBtn,
+#aboutBtn {
+  height: 9vw;
+  width: 18vw;
+  border: none;
+  margin-top: 5vw;
+}
+#aboutBtn {
+  border-radius: 0% 4% 4% 0%;
+}
+#playBtn {
+  border-radius: 4% 0% 0% 4%;
+}
+.btn.btn-lg#earth,
+#easy,
+#new {
+  border-radius: 50% 0% 0% 50%;
+}
+.btn.btn-lg#sun,
+#hard,
+#quit {
+  border-radius: 0% 50% 50% 0%;
+}
+#easy,
+#medium,
+#hard,
+span#diffMsg {
+  font-size: 4vw;
+  color: white;
+  background-color: black;
+  margin-top: 15vw;
+  /*   font-weight: bold; */
+}
+#easy:hover,
+#medium:hover,
+#hard:hover {
+  background-color: white;
+  text-shadow: 1.5px 1.5px 1.5px black;
+}
+#new,
+#chngIcon,
+#quit,
+#chngDiff {
+  font-size: 3vw;
+  font-weight: bold;
+}
+#new:visited,
+#chngIcon:visited,
+#quit:visited,
+#chngDiff:visited,
+#new:active,
+#chngIcon:active,
+#quit:active,
+#chngDiff:active {
+  border-color: white;
+}
+#iconChngBtn {
+  font-size: 15vw;
+  position: absolute;
+  right: 7.5%;
+  top: 7.75%;
+}
+#chngTxt {
+  font-family: 'PT Mono';
+  position: absolute;
+  top: 42%;
+  left: 16%;
+  bottom: ;
+  right: ;
+  color: white;
+  font-size: 3vw;
+  font-weight: bold;
+}
+#quitTxt {
+  position: absolute;
+  left: 28%;
+  top: 39%;
+}
+#newTxt {
+  position: absolute;
+  top: 30%;
+  left: 32%;
+}
+#easyTxt,
+#hardTxt {
+  font-size: 3vw;
+  font-weight: bold;
+  position: absolute;
+  top: 39%;
+  left: 29%;
+}
+#mediumTxt {
+  font-size: 3vw;
+  font-weight: bold;
+  position: absolute;
+  top: 39%;
+  left: 20%;
+}
+#playTxt,
+#aboutTxt {
+  font-size: 3vw;
+  font-weight: bold;
+  position: absolute;
+  top: 31%;
+  left: 30%;
+}
+#about {
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 3vw;
+  padding-right: 4vw;
+  padding-left: 4vw;
+  margin-right: 4vw;
+  margin-left: 4vw;
+}
+#aboutGlyph,
+#aboutGlyphTwo {
+  text-shadow: .5px .5px .5px white;
+}
+#collapseAbout {
+  font-size: 5vw;
+  color: #4cae4c;
+}
+#collapseAbout:hover {
+  opacity: .5;
+}
+#earthIcon,
+#sunIcon {
+  font-size: 10vw;
+  position: absolute;
+  top: 21%;
+  left: 22%;
+}
+#difficulty {
+  background-color: black;
+  height: 100%;
+  width: 100%;
+}
+
+/* ----------- BOOTSTRAP MODIFICATION ------------ */
+.glyphicon-globe {
+  color: #0A42C3;
+  background-color: #004700;
+  border-radius: 50%;
+}
+.glyphicon-certificate {
+  color: #FF9000;
+}
+
+
+/* --------------- MEDIA QUERIES ----------------- */
+@media only screen and (min-width: 240px) and (max-width: 683px) and (min-resolution: 1dppx) {
+  #gameBoard {
+    margin-bottom: 0%;
+    height: 100vw;
+    width: 100vw;
+  }
+  .boardSquare {
+    height: 33vw;
+    width: 33vw;
+    border: solid white 1vw;
+  }
+  .boardImg {
+    font-size: 30vw;
+  }
+  #selectIcon,
+  #winLose {
+    width: 100vw;
+    font-size: 5vw;
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-bottom: 0%;
+  }
+  #stats {
+    font-size: 5vw;
+    margin-bottom: 15vw;
+    margin-top: 15vw;
+    text-align: center;
+  }
+}

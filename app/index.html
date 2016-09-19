@@ -1,0 +1,175 @@
+
+<html>
+  <head>
+    <title>Evan's Tic-Tac-Toe</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet" type="text/css"/>
+    <link href='tictactoe.css' type='text/css' rel='stylesheet'/>
+    <meta name="viewport" content="width=device-width" inital-scale="1"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </head>
+  
+  <body>
+    <!-- Landing page -->
+    <div id="landingPage" class="container-fluid">
+      <h1 id="gameHeader" class="row-fluid text-center">Tic-Tac-Toe</h1>
+      <div class="row-fluid text-center">
+        <div class="btn-group">
+          <button id="playBtn" class="btn btn-success btn-lg"><span id="playTxt">Play</span></button>
+          <button id="aboutBtn" class="btn btn-info btn-lg"><span id="aboutTxt">About</span></button>
+        </div>
+      </div>
+      <div id="about" class="well hidden">
+        <span>About the game</span>
+        <br/>
+        <span>
+          Tic-Tac-Toe is a classic game. The objective is simple. Your goal is to get three in a row of whichever icon you play as, before your opponent. For this version, that will either be Earth
+        </span>
+        <span id="aboutGlyph" class="glyphicon glyphicon-globe forConstantSpin"></span> , or Sun
+        <span id="aboutGlyphTwo" class="glyphicon glyphicon-certificate forConstantSpin"> 
+        </span>.
+        <br/>
+        <span>
+          Winning at Tic-Tac-Toe is usually the result of your opponent making a careless mistake. Computers don't usually make too many mistakes, so I've added three game modes to make the experience a bit more enjoyable.
+        </span>
+        <br/>
+        <span>
+          Easy mode will yield many wins for the user, the computer won't be making too many smart decisions here.
+        </span>
+        <br/>
+        <span>
+          Medium mode will yield many ties and a few wins here and there.
+        </span>
+        <br/>
+        <span>
+          Hard mode will yeild many ties and no wins. Whether it yields you losses or not, depends on how well you play. 
+        </span>
+        <br/>
+        <span>
+          Good luck and have fun!
+        </span>
+        <br/>
+        <span id="collapseAbout" class="glyphicon glyphicon-collapse-up"></span>
+      </div>
+    </div>
+
+    <!-- Choose difficulty page -->
+    <div id="difficulty" class="container-fluid"> 
+      <div class="row-fluid text-center"><span id="diffMsg">choose your difficulty</span></div>
+      <div class="row-fluid text-center">
+        <div class="btn-group">
+          <button id="easy" class="btn btn-default btn-lg diff">
+            <span id="easyTxt">Easy</span>
+          </button>
+          <button id="medium" class="btn btn-default btn-lg diff">
+            <span id="mediumTxt">Medium</span>
+          </button>
+          <button id="hard" class="btn btn-default btn-lg diff">
+            <span id="hardTxt">Hard</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="selectIcon" class="container-fluid">
+      <div class="row-fluid text-center"><span>Pick a side...</span></div>
+      <div id="selectBtns" class="row-fluid text-center">
+        <div class="btn-group">
+          <button id="earth" class="btn btn-default btn-lg icon col-xs-6">
+            <div id="earthIcon" class="glyphicon glyphicon-globe"></div>
+          </button>
+          <button id="sun" class="btn btn-default btn-lg icon col-xs-6">
+            <div id="sunIcon" class="glyphicon glyphicon-certificate"></div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wins and losses page -->
+      <div id="winLose" class="container-fluid">
+        <div class="row-fluid text-center">
+          <span id="sorryCongrats"></span>
+          <span>you <span id="verdict"></span></span>
+        </div>
+        <div class="row-fluid">
+          <table id="stats" class="container-fluid text-center">
+            <tr class="row-fluid text-center">
+              <th class="col-xs-4 text-center">Wins</th>
+              <th class="col-xs-4 text-center">Losses  </th>
+              <th class="col-xs-4 text-center">Ties</th>
+            </tr>
+            <tr class="text-center"> 
+              <td class="col-xs-4 text-center">
+                <span id="userWins">0</span>
+              </td>
+              <td class="col-xs-4 text-center">
+                <span id="userLosses">0</span>
+              </td>
+              <td class="col-xs-4 text-center">
+                <span class="ties">0</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="row-fluid text-center">
+          <div class="btn-group">
+            <button id="new" class="btn btn-default btn-lg primary">
+              <span id="newTxt">New<br/>Game</span>
+            </button>
+            <button id="chngIcon" class="btn btn-default btn-lg">
+              <span id="iconChngBtn" class="glyphicon"> <span id="chngTxt">Change</span></span>
+            </button>
+            <button id="chngDiff" class="btn btn-default btn-lg text-center">
+              <span id="chngDiffTxt" class="text-center"><span id="mode"></span></span>
+            </button>
+            <button id="quit" class="btn btn-default btn-lg danger">
+              <span id="quitTxt">Quit</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    <!-- gameboard section -->
+    <div id='boardBckGrnd'>
+      <div id="gameBoard" class="container-fluid">
+        <div class="row-fluid">
+          <button id="one" class="btn boardSquare">
+            <div id="iconOne" class="boardImg glyphicon"></div>
+          </button>
+          <button id="two" class="btn boardSquare">
+            <div id="iconTwo" class="boardImg glyphicon"></div>
+          </button>
+          <button id="three" class="btn boardSquare">
+            <div id="iconThree" class="boardImg glyphicon"></div>
+          </button>
+        </div>
+        <div class="row-fluid">   
+          <button id="four" class="btn boardSquare">
+            <div id="iconFour" class="boardImg glyphicon"></div>
+          </button>
+          <button id="five" class="btn boardSquare">
+            <div id="iconFive" class="boardImg glyphicon"></div>
+          </button>
+          <button id="six" class="btn boardSquare">
+            <div id="iconSix" class="boardImg glyphicon"></div>
+          </button>
+        </div>
+        <div class="row-fluid"> 
+          <button id="seven" class="btn boardSquare">
+            <div id="iconSeven" class="boardImg glyphicon"></div>
+          </button>
+          <button id="eight" class="btn boardSquare">
+            <div id="iconEight" class="boardImg glyphicon"></div>
+          </button>
+          <button id="nine" class="btn boardSquare">
+            <div id="iconNine" class="boardImg glyphicon"></div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src='tictactoe.js'></script>
+  </body>
+</html>
